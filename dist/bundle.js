@@ -200,16 +200,20 @@
 	    return (0, _convert.rgb_to_lab)(c);
 	  });
 	  for (var k = 0; k < n; k++) {
-	    var best_sum = 0,
+	    var best_min_dist = 0,
 	        best_index = 0;
 	    for (var i = 0; i < remaining.length; i++) {
 	      if (remaining[i] === undefined) continue;
-	      var sum = 0;
+	      var dist = void 0,
+	          min_dist = Infinity;
 	      for (var j = 0; j < results.length; j++) {
-	        sum += (0, _diff.ciede2000)(remaining[i], results[j]);
+	        dist = (0, _diff.ciede2000)(remaining[i], results[j]);
+	        if (min_dist > dist) {
+	          min_dist = dist;
+	        }
 	      }
-	      if (sum > best_sum) {
-	        best_sum = sum;
+	      if (min_dist > best_min_dist) {
+	        best_min_dist = min_dist;
 	        best_index = i;
 	      }
 	    }
