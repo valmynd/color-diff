@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="dist/bundle.js"></script>
+  <title>Test</title>
+</head>
+<body>
+<form>
+  <label for="step1">step</label>
+  <input id="step1" name="step1" type="range" min="6" max="255" oninput="this.form.step2.value=this.value" value="12">
+  <input id="step2" name="step2" type="number" min="6" max="255" oninput="this.form.step1.value=this.value" value="12">
+  <label for="radiusR1">radiusR</label>
+  <input id="radiusR1" name="radiusR1" type="range" min="0" max="255" oninput="this.form.radiusR2.value=this.value" value="64">
+  <input id="radiusR2" name="radiusR2" type="number" min="0" max="255" oninput="this.form.radiusR1.value=this.value" value="64">
+  <label for="radiusG1">radiusG</label>
+  <input id="radiusG1" name="radiusG1" type="range" min="0" max="255" oninput="this.form.radiusG2.value=this.value" value="64">
+  <input id="radiusG2" name="radiusG2" type="number" min="0" max="255" oninput="this.form.radiusG1.value=this.value" value="64">
+  <label for="radiusB1">radiusB</label>
+  <input id="radiusB1" name="radiusB1" type="range" min="0" max="255" oninput="this.form.radiusB2.value=this.value" value="64">
+  <input id="radiusB2" name="radiusB2" type="number" min="0" max="255" oninput="this.form.radiusB1.value=this.value" value="64">
+  <label for="n1">n</label>
+  <input id="n1" name="n1" type="range" min="0" max="255" oninput="this.form.n2.value=this.value" value="16">
+  <input id="n2" name="n2" type="number" min="0" max="255" oninput="this.form.n1.value=this.value" value="16">
+</form>
+<div id="target"></div>
+</body>
+</html>
