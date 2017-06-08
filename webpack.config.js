@@ -1,9 +1,9 @@
 module.exports = {
   entry: [
-    './lib/index.js'
+    __dirname + '/lib/index.js'
   ],
   output: {
-    path: './dist',
+    path: __dirname + '/dist',
     filename: 'bundle.js'
   },
   devtool: 'source-map',
@@ -11,18 +11,17 @@ module.exports = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           plugins: [],
           presets: ['es2015']
         }
       }, {
         test: /\.scss$/,
-        loader: 'style!css!sass'//ExtractTextPlugin.extract('style', 'css!sass!autoprefixer')
+        loader: 'style!css!sass'
       }
     ]
   },
   plugins: [
-    //new ExtractTextPlugin('style.css', {allChunks: true})
   ]
 };

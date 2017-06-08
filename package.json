@@ -4,8 +4,8 @@
   "description": "Implemets the CIEDE2000 color difference algorithm, conversion between RGB and LAB color and mapping all colors in palette X to the closest or most different color in palette Y based on the CIEDE2000 difference.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "npm run build && istanbul cover _mocha && ((cat coverage/lcov.info | coveralls) || exit 0)",
-    "build": "webpack #babel lib --presets babel-preset-es2015 --out-dir dist"
+    "build": "webpack -p",
+    "start": "webpack-dev-server --hot --inline"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "coveralls": "~2.13.1",
     "istanbul": "~0.4.5",
     "mocha": "~3.4.2",
-    "webpack": "^2.6.1"
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
